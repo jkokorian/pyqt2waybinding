@@ -1,4 +1,4 @@
-import PyQt4.QtCore as q
+import PyQt4.QtCore as _q
 
 
 class BindingEndpoint(object):
@@ -22,12 +22,12 @@ class BindingEndpoint(object):
 
         
 
-class Observer(q.QObject):
+class Observer(_q.QObject):
     """
     Create an instance of this class to connect binding endpoints together and intiate a 2-way binding between them.
     """
     def __init__(self):
-        q.QObject.__init__(self)
+        _q.QObject.__init__(self)
 
         self.bindings = {}
         self.ignoreEvents = False
@@ -89,7 +89,7 @@ class Observer(q.QObject):
             else:
                 setter = getattr(instance,"set" + propertyName[0].upper() + propertyName[1:])
         else:
-            getter = lambda: getterAttribute()
+            getter = lambda: getattr(instance,propertyName)
             setter = lambda value: setattr(instance,propertyName,value)
 
         valueChangedSignal = getattr(instance,propertyName + "Changed")

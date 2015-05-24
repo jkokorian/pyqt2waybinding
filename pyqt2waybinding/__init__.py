@@ -1,0 +1,1 @@
+from .pyqt2waybinding import *
