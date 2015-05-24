@@ -28,7 +28,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="pyqt2waybinding\pyqt2waybinding.py" />
-    <Compile Include="pyqt2waybinding\tests\Observer.py">
+    <Compile Include="pyqt2waybinding\tests\BindingEndpoint.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="pyqt2waybinding\tests\__init__.py">
