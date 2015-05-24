@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{de58ff63-f55d-44cd-9f43-ec38c57ec69c}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>pyqt2waybindingg.py</StartupFile>
+    <StartupFile>pyqt2waybinding.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,7 +21,7 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="pyqt2waybindingg.py" />
+    <Compile Include="pyqt2waybinding.py" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
