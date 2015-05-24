@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{de58ff63-f55d-44cd-9f43-ec38c57ec69c}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>pyqt2waybinding.py</StartupFile>
+    <StartupFile>pyqt2waybinding\pyqt2waybinding.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,7 +21,24 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="pyqt2waybinding.py" />
+    <Compile Include="pyqt2waybinding\examples\bind_multiple_controls_to_model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pyqt2waybinding\examples\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pyqt2waybinding\pyqt2waybinding.py" />
+    <Compile Include="pyqt2waybinding\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="setup.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pyqt2waybinding\examples\" />
+    <Folder Include="pyqt2waybinding\" />
+    <Folder Include="pyqt2waybinding\tests\" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
