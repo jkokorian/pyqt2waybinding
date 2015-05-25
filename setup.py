@@ -1,11 +1,11 @@
 from setuptools import setup
 
 def readme():
-    with open('README.md') as f:
+    with open('README.rst') as f:
         return f.read()
 
 setup(name='pyqt2waybinding',
-      version='0.2',
+      version='0.3',
       description='Simple framework for easy 2-way binding with PyQt',
       long_description=readme(),
       url='http://github.com/jkokorian/pyqt2waybinding',

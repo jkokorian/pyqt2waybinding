@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MANIFEST.in" />
+    <Content Include="md2rst.bat" />
     <Content Include="README.md" />
+    <Content Include="README.rst" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
