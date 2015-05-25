@@ -1,9 +1,9 @@
 import unittest
-from pyqt2waybinding.pyqt2waybinding import BindingEndpoint
+from pyqt2waybinding import BindingEndpoint
 from PyQt4.QtCore import QObject, pyqtSignal
 
 
-class Model(QObject):
+class RealPropertyModel(QObject):
     """
     A simple model class for testing
     """
@@ -24,14 +24,10 @@ class Model(QObject):
             self.__value = value
             self.valueChanged.emit(value)
 
-    def setValue(self,value):
-        self.value = value
-
-    def getValue(self):
-        return self.value
+   
 
 
-class Model2(QObject):
+class GetterSetterPairModel(QObject):
     valueChanged = pyqtSignal(int)
     
     def __init__(self):
@@ -47,7 +43,7 @@ class Model2(QObject):
             self.valueChanged.emit(value)
 
 
-class Model3(QObject):
+class VirtualPropertyModel(QObject):
     valueChanged = pyqtSignal(int)
     
     def __init__(self):
@@ -64,7 +60,7 @@ class Model3(QObject):
 
 class Test_Observer(unittest.TestCase):
     def test_forProperty_realProperty(self):
-        m = Model()
+        m = RealPropertyModel()
         endpoint = BindingEndpoint.forProperty(m,"value",useGetter=True)
         
         assert isinstance(endpoint,BindingEndpoint)
@@ -78,7 +74,7 @@ class Test_Observer(unittest.TestCase):
         self.assertTrue(value == 10)
      
     def test_forProperty_getterSetterPairGet(self):
-        m = Model()
+        m = VirtualPropertyModel()
         endpoint = BindingEndpoint.forProperty(m,"getValue",useGetter=True)
         
         assert isinstance(endpoint,BindingEndpoint)
@@ -88,13 +84,13 @@ class Test_Observer(unittest.TestCase):
         self.assertTrue(endpoint.setter.__name__ == "setValue")
         
         endpoint.setter(10)
-        self.assertTrue(m.value == 10)
+        self.assertTrue(m.getValue() == 10)
 
         value = endpoint.getter()
         self.assertTrue(value == 10)
     
     def test_forProperty_getterSetterPairSet(self):
-        m = Model()
+        m = VirtualPropertyModel()
         endpoint = BindingEndpoint.forProperty(m,"setValue",useGetter=True)
         
         assert isinstance(endpoint,BindingEndpoint)
@@ -104,13 +100,13 @@ class Test_Observer(unittest.TestCase):
         self.assertTrue(endpoint.setter.__name__ == "setValue")
         
         endpoint.setter(10)
-        self.assertTrue(m.value == 10)
+        self.assertTrue(m.getValue() == 10)
 
         value = endpoint.getter()
         self.assertTrue(value == 10)
 
     def test_forProperty_getterSetterPairWithoutExplicitGet(self):
-        m = Model2()
+        m = GetterSetterPairModel()
         endpoint = BindingEndpoint.forProperty(m,"value",useGetter=True)
         
         assert isinstance(endpoint,BindingEndpoint)
@@ -126,7 +122,7 @@ class Test_Observer(unittest.TestCase):
         self.assertTrue(value == 10)
 
     def test_forProperty_virtualProperty(self):
-        m = Model3()
+        m = VirtualPropertyModel()
         endpoint = BindingEndpoint.forProperty(m,"value",useGetter=True)
         
         assert isinstance(endpoint,BindingEndpoint)

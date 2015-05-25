@@ -5,7 +5,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{de58ff63-f55d-44cd-9f43-ec38c57ec69c}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>pyqt2waybinding\pyqt2waybinding.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -27,8 +28,7 @@
     <Compile Include="pyqt2waybinding\examples\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="pyqt2waybinding\pyqt2waybinding.py" />
-    <Compile Include="pyqt2waybinding\tests\BindingEndpoint.py">
+    <Compile Include="pyqt2waybinding\tests\test_BindingEndpoint.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="pyqt2waybinding\tests\__init__.py">

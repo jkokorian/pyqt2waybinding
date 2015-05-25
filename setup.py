@@ -11,4 +11,6 @@ setup(name='pyqt2waybinding',
           'pyqt2waybinding'
           ],
       install_requires=[],
+      test_suite='nose.collector',
+      tests_require=['nose'],
       zip_safe=False)
