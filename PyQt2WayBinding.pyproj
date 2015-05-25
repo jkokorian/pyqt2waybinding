@@ -46,6 +46,10 @@
     <Folder Include="pyqt2waybinding\" />
     <Folder Include="pyqt2waybinding\tests\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="MANIFEST.in" />
+    <Content Include="README.md" />
+  </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
 </Project>
