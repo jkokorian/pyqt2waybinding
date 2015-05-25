@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='pyqt2waybinding',
-      version='0.1',
+      version='0.2',
       description='Simple framework for easy 2-way binding with PyQt',
       long_description=readme(),
       url='http://github.com/jkokorian/pyqt2waybinding',
